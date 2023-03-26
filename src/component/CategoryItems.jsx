@@ -8,7 +8,7 @@ export default function CategoryItems({ id, setPopDiv, setVisibility }) {
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
       .then((resp) => resp.json())
       .then((data) => setRecipe(data.meals[0]))
-  }, [])
+  }, [id])
 
   const arr1 = []
   const arr2 = []

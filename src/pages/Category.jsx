@@ -12,7 +12,7 @@ export default function Category() {
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${name}`)
       .then((resp) => resp.json())
       .then((data) => setResults(data.meals))
-  }, [])
+  }, [name])
 
   return (
     <div className="cItems">
