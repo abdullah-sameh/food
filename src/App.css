@@ -1,0 +1,220 @@
+:root {
+  --white: #fbfef9;
+  --black: #191923;
+  --blue: #0e79b2;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:is(a, button) {
+  all: initial;
+  background: var(--blue);
+  color: var(--white);
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  align-self: flex-end;
+  text-transform: capitalize;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+:is(a:hover, button:hover) {
+  background: var(--black);
+}
+#root {
+  min-height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 20px;
+  position: relative;
+  background: var(--white);
+  grid-template-rows: auto auto 1fr auto;
+}
+.no-results {
+  background: #000;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 30px;
+  margin: 0 auto;
+}
+form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+form > input {
+  font-size: 18px;
+}
+.results {
+  max-width: 950px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill, 300px);
+}
+nav {
+  padding: 20px 0;
+}
+section {
+  height: 400px;
+  width: 300px;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 10px 0;
+  border: 2px solid var(--blue);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+img {
+  width: 280px;
+}
+section > h3 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 22px;
+}
+
+.popDiv {
+  position: fixed;
+  counter-reset: p;
+  padding: 10px;
+  color: var(--white);
+  background: var(--black);
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+.popDiv::-webkit-scrollbar {
+  width: 1px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.popDiv > button {
+  all: initial;
+  cursor: pointer;
+  position: absolute;
+  background: var(--blue);
+  color: #fff;
+  right: 0;
+  top: 0px;
+  font-size: 30px;
+  padding: 0 10px 5px;
+}
+.popDiv > button:hover {
+  background-image: linear-gradient(rgb(0 0 0 / 0.2), rgb(0 0 0 / 0.2));
+}
+.popDiv > p {
+  margin: 0;
+  padding: 5px 0;
+  position: relative;
+}
+.popDiv > p::before {
+  counter-increment: p;
+  content: counter(p) "- ";
+}
+.popDiv > p::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--blue);
+  bottom: 0;
+  left: 0;
+}
+h3 {
+  text-transform: capitalize;
+  padding: 5px 0;
+  margin-top: 10px;
+}
+ul {
+  all: initial;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 10px;
+  padding-left: 20px;
+  color: var(--white);
+}
+.bg {
+  position: relative;
+}
+.bg::before {
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  background: rgb(0 0 0 / 0.8);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  cursor: not-allowed;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.categories {
+  max-width: 1230px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.categories > section > p {
+  padding: 5px;
+  max-height: 125px;
+  overflow: hidden;
+  position: relative;
+}
+.categories > section > p::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  background: rgb(255 255 255 / 0.5);
+  bottom: 0;
+  left: 0;
+}
+
+.cItems {
+  max-width: 1230px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+footer {
+  width: 100%;
+  padding: 20px;
+  font-size: 25px;
+  text-align: center;
+  text-transform: capitalize;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
